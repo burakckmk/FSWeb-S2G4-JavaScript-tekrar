@@ -106,37 +106,66 @@ console.log(`Yarıçapı ${yaricap} olan çemberin alanı: ${cemberAlani}`);
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
-  enkucuk,
-  enbuyuk,
-  ucebolunenlerintoplami,
-  besyuzdenkucuksayilar,
-  siralisayilar,
-  tekraredensayilar;
-
 // 3a çözümü
 
-/* kodlar buraya */
+let enbuyuk = sayilar[0];
+let enkucuk = sayilar[0];
+
+for (let i = 1; i < sayilar.length; i++) {
+  if (sayilar[i] > enbuyuk) enbuyuk = sayilar[i];
+  if (sayilar[i] < enkucuk) enkucuk = sayilar[i];
+}
+
+console.log("En büyük sayı:", enbuyuk);
+console.log("En küçük sayı:", enkucuk);
+
 
 // 3b çözümü:
 
-/* kodlar buraya */
+let ucetambolunenler = [];
+sayilar.forEach(sayi => {
+  if (Math.round(sayi) % 3 === 0) ucetambolunenler.push(sayi);
+});
+console.log("3'ün tam katı olan sayılar:", ucetambolunenler);
 
 // 3c çözümü:
 
-/* kodlar buraya */
+const ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => toplam + sayi, 0);
+console.log("3'e tam bölünen sayıların toplamı:", ucebolunenlerintoplami);
+
 
 // 3d çözümü
 
-/* kodlar buraya */
+const besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
+console.log("500'den küçük sayılar:", besyuzdenkucuksayilar);
 
 // 3e çözümü
 
-/* kodlar buraya */
+const siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
+console.log("Sıralı sayılar:", siralisayilar);
+
 
 // 3f çözümü
 
-/* kodlar buraya */
+let tekraredensayilar = [];
+let sayiTekrarObjesi = {};
+
+sayilar.forEach(sayi => {
+  sayi = Math.round(sayi * 100) / 100;  // Ondalık sayıları düzgün karşılaştırmak için yuvarlama
+  if (sayiTekrarObjesi[sayi]) {
+    sayiTekrarObjesi[sayi]++;
+  } else {
+    sayiTekrarObjesi[sayi] = 1;
+  }
+});
+
+for (let sayi in sayiTekrarObjesi) {
+  if (sayiTekrarObjesi[sayi] > 1) {
+    tekraredensayilar.push(`${sayi} sayısı ${sayiTekrarObjesi[sayi]} kere tekrar edilmiştir`);
+  }
+}
+console.log("Tekrar eden sayılar:", tekraredensayilar);
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
