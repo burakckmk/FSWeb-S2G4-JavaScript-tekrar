@@ -37,9 +37,12 @@ const sayilar = [
 
 //Örneğin çözümü:
 function KareninAlani(kenaruzunlugu) {
-  return kenaruzunlugu * kenaruzunlugu;
+  const alan = kenarUzunlugu * kenarUzunlugu;
+  return alan;
 }
-
+const kenarUzunlugu = 5;
+const alan = KareninAlani(kenarUzunlugu);
+console.log("Karenin alanı:", alan);
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* GÖREV 1:  
