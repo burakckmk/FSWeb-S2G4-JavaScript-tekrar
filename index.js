@@ -53,9 +53,14 @@ console.log("Karenin alanı:", alan);
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap, pi) {
+  return 2 * pi * yaricap;
 }
+const yaricap = 5;
+const piDegeri = 3.14159;
+const cevresi = CemberinCevresi(yaricap, piDegeri);
+console.log(`Yarıçapı ${yaricap} olan çemberin çevresi: ${cevresi}`);
+
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -67,9 +72,18 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+// CemberinAlani fonksiyonu
+function CemberinAlani(yaricap, pi) {
+  return pi * Math.pow(yaricap, 2);
 }
+
+// Örnek kullanım
+const yaricapDegeri = 15;
+const piSayisi = 3.14159;
+const cemberAlani = CemberinAlani(yaricap, piDegeri);
+console.log(`Yarıçapı ${yaricap} olan çemberin alanı: ${cemberAlani}`);
+
+
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
